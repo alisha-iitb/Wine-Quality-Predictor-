@@ -23,7 +23,7 @@ def main():
     st.title("White Wine Quality Predictor")
     html_temp = """
     <div style="background-color:tomato;padding:10px">
-    <h2 style="color:white;text-align:center;">Streamlit Bank Authenticator ML App </h2>
+    <h2 style="color:white;text-align:center;">Streamlit Wine predictor App </h2>
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
@@ -50,6 +50,9 @@ def main():
     prediction=classifier.predict(input_data)
     # Display the prediction
     st.write('Predicted Quality:', prediction[0])
+    
+    # Rerun the script when sliders change
+    st.experimental_rerun()
 
 def preprocess_input_data(slider_values):
     # Create a DataFrame with the input features
